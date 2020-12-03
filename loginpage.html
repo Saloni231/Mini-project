@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="loginpage.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body style="margin: auto; max-width: 500px;">
+        <h1>Welcome!!</h1>
+        <h3>Please login</h3>
+        <div>
+            <form method="POST" action="loginpage.php" class="needs-validation">
+                <div class="form-inline">
+                    <label for="username"> <svg width="24" height="24" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                        </svg>Username:</label>&nbsp;&nbsp;
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="Username" required style="width: max-content;">
+                    <!--<div class="valid-feedback">Valid.</div>-->
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label for="pass"><svg width="24" height="24" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
+                    <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+                    </svg>  Password:</label>&nbsp;&nbsp;
+                    <input type="password" class="form-control" id="pass" placeholder="Enter password" name="Password" required style="width: max-content;">
+                    <!--<div class="valid-feedback">Valid.</div>-->
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div><br>
+                <div class="btn">
+                <button type="submit" class="btn btn-primary" style="color: black; font-size: larger; font-family: 'Times New Roman', Times, serif; font-weight: bold;"> Log In</button>
+                <b>OR</b>
+                <a href="signuppage.html"><input type="button" value="Sign Up" class="btn btn-primary" style="color: black; font-size: larger; font-family: 'Times New Roman', Times, serif; font-weight: bold;"></a>
+                </div>
+            </form>
+            <script>
+                (function() {
+                    'use strict';
+                    window.addEventListener('load', function() {
+                    // Get the forms we want to add validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+        </div>
+    </body>
+</html>

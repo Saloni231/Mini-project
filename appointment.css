@@ -1,0 +1,13 @@
+.ml-auto{
+    left: auto !important;
+    right: 0px;
+}
+.nav-item a:hover{
+    background-color: grey;
+}
+#Mydetails{
+    color: darkblue;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}

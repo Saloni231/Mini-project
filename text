@@ -1,0 +1,11 @@
+color: rgb(30, 144, 255);
+background-repeat: no-repeat;
+ style="font-size: 25px;
+ style="background: inherit;"
+   background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(30, 144, 255);
+  color: rgb(95,158,160);
+  p{
+  color:rgb(25,25,112);
+}

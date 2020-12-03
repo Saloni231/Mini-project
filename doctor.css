@@ -1,0 +1,21 @@
+.ml-auto{
+    left: auto !important;
+    right: 0px;
+}
+.nav-item a:hover{
+    background-color: grey;
+}
+#Mydetails{
+    color: darkblue;
+}
+.content{
+    background-color: rgb(235, 243, 247);
+    padding: 50px;
+    margin: 20px;
+    box-shadow:  10px 10px 5px rgb(196, 195, 195);
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}

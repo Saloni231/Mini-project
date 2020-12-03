@@ -1,0 +1,24 @@
+body{
+    background-image: url(bg.png);
+    background-size: cover;
+    color: black;
+    margin: 0 auto;
+    max-width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: bold;
+    padding: 20px;
+}
+h1{
+    margin-top: 50px;
+    text-align: center;
+    padding: 10px;
+}
+h3{
+    text-align: center;
+    padding: 10px;
+}
+div{
+    text-align: center;
+    padding: 10px;
+}

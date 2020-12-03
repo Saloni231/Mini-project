@@ -1,0 +1,34 @@
+body{
+    background-image: url(1.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    margin: 0 auto;
+}
+.heading{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin: 0 auto;
+    padding: 15%;
+    padding-bottom: 0px;
+}
+@media (max-width:768px){
+    .heading{
+        font-size: larger;
+    }
+}
+.button{
+    text-align: center;
+}
+input{
+    width: 100px;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(65, 162, 241);
+    border: none;
+    border-radius: 10px;
+}
+input:hover{
+    background-color: rgb(163, 163, 235);
+}
