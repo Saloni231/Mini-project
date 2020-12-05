@@ -1,15 +1,15 @@
-<!DOCTYPE html>
 <?php error_reporting(E_ALL ^ E_NOTICE); session_start();?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Smart Health Consultant</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="doctor.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap.min.js"></script>
   </head>
   <style>
     body{
@@ -50,7 +50,7 @@ box-sizing: inherit;
             <a class="nav-link"  href="appointment.php"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="24" height="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> View Appointment</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="aboutus.css"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="24" height="24"><rect fill="none" height="24" width="24"/><g><path d="M12,12.75c1.63,0,3.07,0.39,4.24,0.9c1.08,0.48,1.76,1.56,1.76,2.73L18,18H6l0-1.61c0-1.18,0.68-2.26,1.76-2.73 C8.93,13.14,10.37,12.75,12,12.75z M4,13c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2s-2,0.9-2,2C2,12.1,2.9,13,4,13z M5.13,14.1 C4.76,14.04,4.39,14,4,14c-0.99,0-1.93,0.21-2.78,0.58C0.48,14.9,0,15.62,0,16.43V18l4.5,0v-1.61C4.5,15.56,4.73,14.78,5.13,14.1z M20,13c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2s-2,0.9-2,2C18,12.1,18.9,13,20,13z M24,16.43c0-0.81-0.48-1.53-1.22-1.85 C21.93,14.21,20.99,14,20,14c-0.39,0-0.76,0.04-1.13,0.1c0.4,0.68,0.63,1.46,0.63,2.29V18l4.5,0V16.43z M12,6c1.66,0,3,1.34,3,3 c0,1.66-1.34,3-3,3s-3-1.34-3-3C9,7.34,10.34,6,12,6z"/></g></svg> About Us</a>
+            <a class="nav-link"  href="aboutus.html"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="24" height="24"><rect fill="none" height="24" width="24"/><g><path d="M12,12.75c1.63,0,3.07,0.39,4.24,0.9c1.08,0.48,1.76,1.56,1.76,2.73L18,18H6l0-1.61c0-1.18,0.68-2.26,1.76-2.73 C8.93,13.14,10.37,12.75,12,12.75z M4,13c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2s-2,0.9-2,2C2,12.1,2.9,13,4,13z M5.13,14.1 C4.76,14.04,4.39,14,4,14c-0.99,0-1.93,0.21-2.78,0.58C0.48,14.9,0,15.62,0,16.43V18l4.5,0v-1.61C4.5,15.56,4.73,14.78,5.13,14.1z M20,13c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2s-2,0.9-2,2C18,12.1,18.9,13,20,13z M24,16.43c0-0.81-0.48-1.53-1.22-1.85 C21.93,14.21,20.99,14,20,14c-0.39,0-0.76,0.04-1.13,0.1c0.4,0.68,0.63,1.46,0.63,2.29V18l4.5,0V16.43z M12,6c1.66,0,3,1.34,3,3 c0,1.66-1.34,3-3,3s-3-1.34-3-3C9,7.34,10.34,6,12,6z"/></g></svg> About Us</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -70,27 +70,34 @@ box-sizing: inherit;
             <?php
               session_start();
               $name = $_POST['doc'];
-              $conn = new mysqli('localhost','root','','user_login');
+              $conn = new mysqli('localhost','id15578246_abc','RU}B^tu#5-ijiv^j','id15578246_website');
               if($conn->connect_error)
               {
                 die("Connection falied : ".$conn->connect_error);
               }
               else
               {
-                $result = "";
-                $result = mysqli_query($conn,"select * from doctor where name = '$name'");
-                $row = mysqli_fetch_array($result);
-                if($row != "")
+                if($name != "")
                 {
-                  if($row['name']==$name)
+                  $result = "";
+                  $result = mysqli_query($conn,"select * from doctor where name = '$name'");
+                  $row = mysqli_fetch_array($result);
+                  if($row != "")
                   {
-                    echo'<br><h3 style = " text-transform: capitalize;">Doctor Name : '.$row['name'];
-                    echo'<br><br>Degree : '.$row['degree'];
-                    echo'<br><br>Specialisation : '.$row['specialisation'];
-                    echo'</h3><br><h3>Email : '.$row['email'];
-                    echo'<br><br>Mobile : '.$row['mobile'];
-                    echo'</h3>';
-                    echo'<br><a href="make_appointment.php"><input type="button" value="Make an Appointment" id="appointment" class="btn btn-primary" style="width:max-content"></a>';
+                    if($row['name']==$name)
+                    {
+                      echo'<br><h3 style = " text-transform: capitalize;">Doctor Name : '.$row['name'];
+                      echo'<br><br>Degree : '.$row['degree'];
+                      echo'<br><br>Specialisation : '.$row['specialisation'];
+                      echo'</h3><br><h3>Email : '.$row['email'];
+                      echo'<br><br>Mobile : '.$row['mobile'];
+                      echo'</h3>';
+                      echo'<br><a href="make_appointment.php"><input type="button" value="Make an Appointment" id="appointment" class="btn btn-primary" style="width:max-content"></a>';
+                    }
+                  }
+                  else
+                  {
+                    echo'No Data Found';
                   }
                 }
               }

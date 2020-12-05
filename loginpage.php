@@ -1,11 +1,8 @@
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <?php
     session_start();
     $user = $_POST['Username'];
     $pass = $_POST['Password'];
-    $conn = new mysqli('localhost','root','','user_login');
+    $conn = new mysqli('localhost','id15578246_abc','RU}B^tu#5-ijiv^j','id15578246_website');
     if($conn->connect_error)
     {
         die("Connection falied : ".$conn->connect_error);
@@ -44,3 +41,6 @@
     }
 
 ?>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

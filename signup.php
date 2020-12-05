@@ -10,7 +10,7 @@
     $gender = $_POST['gen'];
     $mob = $_POST['mobile'];
 
-    $conn = new mysqli('localhost','root','','user_login');
+    $conn = new mysqli('localhost','id15578246_abc','RU}B^tu#5-ijiv^j','id15578246_website');
     if($conn->connect_error)
     {
         die("Connection falied : ".$conn->connect_error);
@@ -27,10 +27,6 @@
         $stmt = $conn->prepare("Insert into rest(fname,lname,email,username,pass,cpass,dob,gender,mobile)values(?,?,?,?,?,?,?,?,?)");
         $stmt->bind_param("ssssssssi",$fname,$lname,$email,$user,$pass,$cpass,$dob,$gender,$mob);
         $stmt->execute();
-        echo'<div class="alert alert-success alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Success!</strong> You have sucessfully Logged In.
-                </div>';
         include 'homepage.php';
         $stmt->close();
         $conn->close();

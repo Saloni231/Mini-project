@@ -1,14 +1,14 @@
-<!DOCTYPE html>
 <?php error_reporting(E_ALL ^ E_NOTICE); session_start();?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Smart Health Consultant</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap.min.js"></script>
     <link rel="stylesheet" href="appointment.css">
   </head>
   <style>
@@ -69,7 +69,7 @@ box-sizing: inherit;
     <?php
       session_start();
       $fname = $_SESSION['fname'];
-      $conn = new mysqli('localhost','root','','user_login');
+      $conn = new mysqli('localhost','id15578246_abc','RU}B^tu#5-ijiv^j','id15578246_website');
       if($conn->connect_error)
       {
         die("Connection falied : ".$conn->connect_error);

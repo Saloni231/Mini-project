@@ -1,15 +1,15 @@
-<!DOCTYPE html>
 <?php error_reporting(E_ALL ^ E_NOTICE); session_start();?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Smart Health Consultant</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="disease.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap.min.js"></script>
   </head>
   <style>
     body{
@@ -75,70 +75,77 @@ box-sizing: inherit;
         <?php
           session_start();
           $disease = $_POST['disease'];
-          $conn = new mysqli('localhost','root','','user_login');
+          $conn = new mysqli('localhost','id15578246_abc','RU}B^tu#5-ijiv^j','id15578246_website');
           if($conn->connect_error)
           {
             die("Connection falied : ".$conn->connect_error);
           }
           else
           {
-            $result = "";
-            $result = mysqli_query($conn,"select * from disease where disease = '$disease'");
-            $row = mysqli_fetch_array($result);
-            if($row != "")
+            if($disease != "")
             {
-              if($row['disease']==$disease)
+              $result = "";
+              $result = mysqli_query($conn,"select * from disease where disease = '$disease'");
+              $row = mysqli_fetch_array($result);
+              if($row != "")
               {
-                echo'<br><h3 style = " text-transform: capitalize;">Disease : '.$row['disease'];
-                echo'<br><br>Symptoms : '.$row['symptoms'];
-                echo'</h3>';
-                echo'<br><input type="button" value="View Related Doctors" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="width:max-content">
-                <div class="modal fade" id="myModal">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                  <div class="modal-content">
+                if($row['disease']==$disease)
+                {
+                  echo'<br><h3 style = " text-transform: capitalize;">Disease : '.$row['disease'];
+                  echo'<br><br>Symptoms : '.$row['symptoms'];
+                  echo'</h3>';
+                  echo'<br><input type="button" value="View Related Doctors" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="width:max-content">
+                  <div class="modal fade" id="myModal">
+                  <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
         
-                  <!-- Modal Header -->
-                    <div class="modal-header">
-                      <h4 class="modal-title">Related Doctors</h4>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+                    <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Related Doctors</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
           
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Degree</th>
-                            <th>Specialised In</th>
-                            <th>Email</th>
-                            <th>Mobile Number</th>
-                            <th>Fix Appointment</th>
-                          </tr>
-                        </thead>
-                        <tbody>';
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+                              <th>Degree</th>
+                              <th>Specialised In</th>
+                              <th>Email</th>
+                              <th>Mobile Number</th>
+                              <th>Fix Appointment</th>
+                            </tr>
+                          </thead>
+                          <tbody>';
 
-                        $result1 = "";
-                        $result1 = mysqli_query($conn,"select * from doctor where specialisation = '$disease'");
-                        if (mysqli_num_rows($result1) > 0) 
-                        {
-                          // output data of each row
-                          while($row1 = mysqli_fetch_assoc($result1)) 
+                          $result1 = "";
+                          $result1 = mysqli_query($conn,"select * from doctor where specialisation = '$disease'");
+                          if (mysqli_num_rows($result1) > 0) 
                           {
-                            echo'<tr><td>'.$row1['name'];
-                            echo'</td><td>'.$row1['degree'];
-                            echo'</td><td>'.$row1['specialisation'];
-                            echo'</td><td>'.$row1['email'];
-                            echo'</td><td>'.$row1['mobile'];
-                            echo'</td><td><a href="make_appointment.php">Click Here</a></td></tr>';
+                            // output data of each row
+                            while($row1 = mysqli_fetch_assoc($result1)) 
+                            {
+                              echo'<tr><td>'.$row1['name'];
+                              echo'</td><td>'.$row1['degree'];
+                              echo'</td><td>'.$row1['specialisation'];
+                              echo'</td><td>'.$row1['email'];
+                              echo'</td><td>'.$row1['mobile'];
+                              echo'</td><td><a href="make_appointment.php">Click Here</a></td></tr>';
+                            }
                           }
-                        }
-                        echo'</tbody>
-                      </table>
+                          echo'</tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>  ';
+                </div>  ';
+                }
+              }
+              else
+              {
+                echo'No Data Found';
               }
             }
           }
