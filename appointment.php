@@ -68,7 +68,7 @@ box-sizing: inherit;
     <div>
     <?php
       session_start();
-      $fname = $_SESSION['fname'];
+      $email = $_SESSION['email'];
       $conn = new mysqli('localhost','id15578246_abc','RU}B^tu#5-ijiv^j','id15578246_website');
       if($conn->connect_error)
       {
@@ -77,7 +77,7 @@ box-sizing: inherit;
       else
       {
         $result = "";
-        $result = mysqli_query($conn,"select * from appointment where fname = '$fname'");
+        $result = mysqli_query($conn,"select * from appointment where email = '$email'");
             echo'<div class="card" style="background: inherit;" >
             <div class="card-header" style=" margin: 10px; padding: 15px; font-size: 30px; font-weight: bolder; color: black; ">Patient Record</div>
             <div class="modal-body">
